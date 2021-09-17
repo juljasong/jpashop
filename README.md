@@ -33,5 +33,5 @@ $ java -jar jpashop-0.0.1-SNAPSHOT.jar
 ````
 
 ### 쿼리 파라미터 로그 남기기
-- 실운용 시 성능 문제가 생길 수 있음.. 
+- 실운용 시 성능 문제가 생길 수 있음..  
 implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
