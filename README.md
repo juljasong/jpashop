@@ -51,4 +51,4 @@ implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
 - 모든 연관관계는 지연로딩(LAZY)으로 설정 (fetch = FetchType.LAZY)
   - @XToOne -> 즉시로딩
 
-# 20210918_ Add MemberRepository
+# 20210918_ Add MemberRepository, MemberService
