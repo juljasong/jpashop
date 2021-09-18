@@ -52,3 +52,10 @@ implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
   - @XToOne -> 즉시로딩
 
 # 20210918_ Add MemberRepository, MemberService
+
+### 테스트 케이스를 위한 설정
+- 테스트는 메모리 DB를 사용하는 것이 가장 이상적이다.
+- 추가로 테스트 케이스를 위한 스프링 환경과, 일반적으로 애플리케이션을 실행하는 환경은 보통 다르므로 설정 파일을 다르게 사용하자. 
+  - 다음과 같이 간단하게 테스트용 설정 파일을 추가하면 된다.
+    - test/resources/application.yml
+    - TEST 에서는 DB를 설정해 주지 않으면 기본적으로 인메모리로 실행된다..!
