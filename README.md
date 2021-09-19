@@ -60,4 +60,14 @@ implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
     - test/resources/application.yml
     - TEST 에서는 DB를 설정해 주지 않으면 기본적으로 인메모리로 실행된다..!
   
-# 20210919_ Add ItemRepository, ItemService
+# 20210919
+- Add ItemRepository, ItemService, NotEnoughStockException
+  - NotEnoughStockException : RuntimeException 전체 메서드 Override
+- Add OrderRepository, OrderService
+  - 생성 메서드 사용 시, 기존 생성자는 접근 제한을 거는 것이 좋음.
+    - @NoArgsConstructor(access = AccessLevel.PROTECTED)
+  
+### 도메인 모델 패턴
+: 엔티티에 대부분의 비즈니스 로직이 기술되어 있고, 서비스는 단순히 엔티티에 필요한 요청을 위임하여 처리하는 방식
+#### <-> 트랜잭션 스크립트 패턴
+: 반대로 엔티티에는 비즈니스 로직이 거의 없고 서비스 계층에서 대부분의 비즈니스 로직을 처리하는 방식
