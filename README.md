@@ -11,7 +11,7 @@
 ### DevTools
 +) implementation 'org.springframework.boot:spring-boot-devtools'   
 개발시 유용한 기능들을 제공해줌.
-1. template 갱신 후 Build - Recompile => 서버 재실행하지 않아도 화면 자동 갱신
+- template 갱신 후 Build - Recompile => 서버 재실행하지 않아도 화면 자동 갱신
 
 ### H2 설정
 - JDBC URL: jdbc:h2:~/jpashop
@@ -60,7 +60,7 @@ implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
     - test/resources/application.yml
     - TEST 에서는 DB를 설정해 주지 않으면 기본적으로 인메모리로 실행된다..!
   
-# 20210919
+# 20210919_ Add Item, Order Repo/Service AND TEST
 - Add ItemRepository, ItemService, NotEnoughStockException
   - NotEnoughStockException : RuntimeException 전체 메서드 Override
 - Add OrderRepository, OrderService
@@ -74,3 +74,13 @@ implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
 
 # JPA 동적 쿼리
 
+# 20210920_ Home Layout
+- /resources
+  - /static
+    - /css
+    - /js
+  - /templates
+    - /fragments
+    - home.html
+    
+* 강제로 css/js 복붙하면 바로 적용 X => resources 디렉토리 reload & Build Project
