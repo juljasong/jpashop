@@ -89,3 +89,29 @@ implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
 - MemberForm을 따로 생성하는 이유 : Member 엔티티와 회원 가입 시 입력받는 데이터에는 차이가 있을 수 밖에 없기 때문에 Form을 따로 생성해줌.
   - 요구 사항이 간단할 경우에는 엔티티 그대로 사용해도 되지만... 엔티티는 핵심 비즈니스 로직만 가지고 있는 것이 좋음.
 - API인 경우에는 엔티티를 바로 반환해서는 안됨.
+
+# Edit Items
+
+ItemController.java
+````java
+    public void save(Item item) {
+        if (item.getId() == null) {
+            em.persist(item);
+        }  else {
+            em.merge(item); // UPDATE 같은거?
+        }
+    }
+````
+- merge ?
+
+# 변경 감지와 병합(merge)
+### 준영속 엔티티?
+영속적 컨텍스트가 더는 관리하지 않는 엔티티(기존 식별자를 가지고 있는 경우)
+
+- 변경 감지 (Dirty Checking)
+  - 영속성 컨텍스트에서 엔티티를 조회한 후 데이터 수정
+  - 트랜젝션 안에서 엔티티를 조회, 변경할 값을 선택 -> 트랜잭션 커밋 시점에 변경 감지(Dirty Checking)이 동작하여 DB에 UPDATE SQL 실행
+  - 원하는 속성만 선택해서 변경 가능
+- 병합 (쓰지 않는게 나음)
+  - 준영속 상태의 엔티티를 영속 상태로 변경할 때 사용(반환)
+  - 모든 속성 변경 -> 병합 시 값이 없으면 null로 업데이트 할 위험이 있음.
