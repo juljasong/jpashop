@@ -84,3 +84,7 @@ implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
     - home.html
     
 * 강제로 css/js 복붙하면 바로 적용 X => resources 디렉토리 reload & Build Project
+
+# Add MemberForm, MemberController
+- MemberForm을 따로 생성하는 이유 : Member 도메인과 회원 가입 시 입력받는 데이터에는 차이가 있을 수 밖에 없기 때문에 Form을 따로 생성해줌.
+- 
