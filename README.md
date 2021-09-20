@@ -86,5 +86,6 @@ implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
 * 강제로 css/js 복붙하면 바로 적용 X => resources 디렉토리 reload & Build Project
 
 # Add MemberForm, MemberController
-- MemberForm을 따로 생성하는 이유 : Member 도메인과 회원 가입 시 입력받는 데이터에는 차이가 있을 수 밖에 없기 때문에 Form을 따로 생성해줌.
-- 
+- MemberForm을 따로 생성하는 이유 : Member 엔티티와 회원 가입 시 입력받는 데이터에는 차이가 있을 수 밖에 없기 때문에 Form을 따로 생성해줌.
+  - 요구 사항이 간단할 경우에는 엔티티 그대로 사용해도 되지만... 엔티티는 핵심 비즈니스 로직만 가지고 있는 것이 좋음.
+- API인 경우에는 엔티티를 바로 반환해서는 안됨.
